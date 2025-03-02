@@ -5,15 +5,8 @@ float price,total,payment;
 string name;
 
 
-void Input(){
-    cout<<"Enter Product Code : ";
-    cin>>code;
-    cout<<"Enter Product Name : ";
-    cin>>name;
-    cout<<"Enter Product Price : ";
-    cin>>price;
-    cout<<"Enter Product Quantity : ";
-    cin>>qty;
+void Input(int code,string name,float price,int qty){
+    
 }
 
 float Calculate(){
@@ -48,7 +41,7 @@ float Payment(){
 }
 
 void Header(){
-    cout<<"\t\t\t---------------------------------------------"<<endl;
+    cout<<"\033[32m\t\t\t---------------------------------------------"<<endl;
     cout<<"\t\t\t         Welcome to Super Market Store       "<<endl;
     cout<<"\t\t\t---------------------------------------------"<<endl;
     cout<<"\t\t"<<"ID\t"<<"Name\t"<<"Price\t"<<"Quantity\t"<<"Discount\t"<<"Total\t"<<"Payment"<<endl;
@@ -56,12 +49,23 @@ void Header(){
 
 void Display(){
     Payment();
-    cout<<"\t\t"<<code<<"\t"<<name<<"\t"<<price<<"\t"<<qty<<"\t\t"<<dis<<"%\t\t"<<total<<"$\t"<<payment<<"$"<<endl;
+    cout<<"\t\t"<<code<<"\t"<<name<<"\t"<<price<<"\t"<<qty<<"\t\t"<<dis<<"%\t\t"<<total<<"$\t"<<payment<<"$\033[0m"<<endl;
 }
 
 int main(){
     system("cls");
-    Input();
+    cout<<"\n\t\t\t\033[33m***************************************\n"<<endl;
+    cout<<"\t\t\t=> Enter Product Code : ";
+    cin>>code;
+    cout<<"\t\t\t=> Enter Product Name : ";
+    cin>>name;
+    cout<<"\t\t\t=> Enter Product Price : ";
+    cin>>price;
+    cout<<"\t\t\t=> Enter Product Quantity : ";
+    cin>>qty;
+    cout<<"\n\t\t\t***************************************\n"<<endl;
+
+    Input(code,name,price,qty);
     Header();
     Display();
     return 0;
