@@ -354,6 +354,30 @@ int main(){
 				
 				break;
 			}
+			case 5:{
+				cout<<"\t\t======================Update========================\n";
+				int update;
+				cout<<"Enter the position to update: ";cin>>update;
+				check = true;
+				for(int i=0;i<size;i++){
+					if(update == arr[i]){
+						int newValue;
+						cout<<"Enter the new value: ";cin>>newValue;
+						arr[i] = newValue;
+						check = false;
+						cout<<"Element Update successfully!!!"<<endl;
+                        break;
+					}
+				}
+				if(check){
+                    cout<<"Element not found.\n";
+                }
+                break;
+			}
+			default: {
+                cout<<"\t\t====================Invalid Option========================\n";
+                break;
+            }
 		}
         
     }while(op!=0);
