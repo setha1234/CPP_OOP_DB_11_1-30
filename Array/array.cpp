@@ -287,6 +287,7 @@
 
 
 #include<iostream>
+#include<iomanip>
 using namespace std;
 int code[20],quantity[20],option,size;
 string name[20];
@@ -327,6 +328,7 @@ void DisplayPhone(){
 }
 
 void PaymentRiel(){
+	total = 0;
 	float riel = 4000;
 	cout<<"=================================================="<<endl;
     cout<<"º\t Payment in Riel"<<endl;
@@ -338,7 +340,24 @@ void PaymentRiel(){
 	// oppo = 150 * 1000 = 150,000
 	// total = 200,000 + 150,000;
 	payment = total * riel;
-	cout<<"Total price in Riel : "<<fixed<<payment<<" Riel"<<endl;
+	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<payment<<" Riel"<<endl;
+    cout<<"=================================================="<<endl;
+    cout<<"=================================================="<<endl;
+}
+
+void PaymentDollar(){
+	total = 0;
+	cout<<"=================================================="<<endl;
+    cout<<"º\t Payment in Dollar"<<endl;
+    cout<<"=================================================="<<endl;
+	for (int i=0;i<size;i++){
+		total += price[i] * quantity[i];
+	}
+	// vivo = 200 * 1000 = 200,000
+	// oppo = 150 * 1000 = 150,000
+	// total = 200,000 + 150,000;
+	
+	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<total<<" $"<<endl;
     cout<<"=================================================="<<endl;
     cout<<"=================================================="<<endl;
 }
@@ -372,6 +391,14 @@ int main(){
 			}
 			case 3 : {
                 PaymentRiel();
+                break;
+            }
+			case 4 : {
+                PaymentDollar();
+                break;
+            }
+			default : {
+                cout<<"Invalid option. Please try again."<<endl;
                 break;
             }
 		}	
