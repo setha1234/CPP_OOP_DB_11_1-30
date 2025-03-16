@@ -286,124 +286,252 @@
 
 
 
-#include<iostream>
-#include<iomanip>
-using namespace std;
-int code[20],quantity[20],option,size;
-string name[20];
-float price[20];
-double total,payment;
-void CreatePhone(){
-	int j=0;
-	cout<<"=================================================="<<endl;
-	cout<<"º\t Create a new phone"<<endl;
-	cout<<"=================================================="<<endl;
-	cout<<"Enter size of phone to create : ";cin>>size;
-	while(j<size){
-		cout<<"\nEnter phone code : ";cin>>code[j];
-		cout<<"Enter phone name : ";cin>>name[j];
-		cout<<"Enter phone price : ";cin>>price[j];
-		cout<<"Enter phone quantity : ";cin>>quantity[j];
-		j++;
-	}
-	cout<<"=================================================="<<endl;
-	cout<<"\tPhone created successfully!"<<endl;
-	cout<<"=================================================="<<endl;
-}
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+// int code[20],quantity[20],option,size;
+// string name[20];
+// float price[20];
+// double total,payment;
+// void CreatePhone(){
+// 	int j=0;
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"º\t Create a new phone"<<endl;
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"Enter size of phone to create : ";cin>>size;
+// 	while(j<size){
+// 		cout<<"\nEnter phone code : ";cin>>code[j];
+// 		cout<<"Enter phone name : ";cin>>name[j];
+// 		cout<<"Enter phone price : ";cin>>price[j];
+// 		cout<<"Enter phone quantity : ";cin>>quantity[j];
+// 		j++;
+// 	}
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"\tPhone created successfully!"<<endl;
+// 	cout<<"=================================================="<<endl;
+// }
 
-void DisplayPhone(){
-	int j=0;
-	cout<<"=================================================="<<endl;
-	cout<<"º\t Display all phone"<<endl;
-	cout<<"=================================================="<<endl;
-	cout<<"Code Phone \t Name Phone \t Price Phone \t Quantity Phone "<<endl;
-	while(j<size){
-		cout<<code[j]<<"\t\t"<<name[j]<<"\t\t"<<price[j]<<"\t\t"<<quantity[j]<<endl;
-        j++;
-	}
-	cout<<"=================================================="<<endl;
-	cout<<"\t\tEnd Display phone"<<endl;
-	cout<<"=================================================="<<endl;
+// void DisplayPhone(){
+// 	int j=0;
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"º\t Display all phone"<<endl;
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"Code Phone \t Name Phone \t Price Phone \t Quantity Phone "<<endl;
+// 	while(j<size){
+// 		cout<<code[j]<<"\t\t"<<name[j]<<"\t\t"<<price[j]<<"\t\t"<<quantity[j]<<endl;
+//         j++;
+// 	}
+// 	cout<<"=================================================="<<endl;
+// 	cout<<"\t\tEnd Display phone"<<endl;
+// 	cout<<"=================================================="<<endl;
 
-}
+// }
 
-void PaymentRiel(){
-	total = 0;
-	float riel = 4000;
-	cout<<"=================================================="<<endl;
-    cout<<"º\t Payment in Riel"<<endl;
-    cout<<"=================================================="<<endl;
-	for (int i=0;i<size;i++){
-		total += price[i] * quantity[i];
-	}
-	// vivo = 200 * 1000 = 200,000
-	// oppo = 150 * 1000 = 150,000
-	// total = 200,000 + 150,000;
-	payment = total * riel;
-	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<payment<<" Riel"<<endl;
-    cout<<"=================================================="<<endl;
-    cout<<"=================================================="<<endl;
-}
+// void PaymentRiel(){
+// 	total = 0;
+// 	float riel = 4000;
+// 	cout<<"=================================================="<<endl;
+//     cout<<"º\t Payment in Riel"<<endl;
+//     cout<<"=================================================="<<endl;
+// 	for (int i=0;i<size;i++){
+// 		total += price[i] * quantity[i];
+// 	}
+// 	// vivo = 200 * 1000 = 200,000
+// 	// oppo = 150 * 1000 = 150,000
+// 	// total = 200,000 + 150,000;
+// 	payment = total * riel;
+// 	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<payment<<" Riel"<<endl;
+//     cout<<"=================================================="<<endl;
+//     cout<<"=================================================="<<endl;
+// }
 
-void PaymentDollar(){
-	total = 0;
-	cout<<"=================================================="<<endl;
-    cout<<"º\t Payment in Dollar"<<endl;
-    cout<<"=================================================="<<endl;
-	for (int i=0;i<size;i++){
-		total += price[i] * quantity[i];
-	}
-	// vivo = 200 * 1000 = 200,000
-	// oppo = 150 * 1000 = 150,000
-	// total = 200,000 + 150,000;
+// void PaymentDollar(){
+// 	total = 0;
+// 	cout<<"=================================================="<<endl;
+//     cout<<"º\t Payment in Dollar"<<endl;
+//     cout<<"=================================================="<<endl;
+// 	for (int i=0;i<size;i++){
+// 		total += price[i] * quantity[i];
+// 	}
+// 	// vivo = 200 * 1000 = 200,000
+// 	// oppo = 150 * 1000 = 150,000
+// 	// total = 200,000 + 150,000;
 	
-	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<total<<" $"<<endl;
-    cout<<"=================================================="<<endl;
-    cout<<"=================================================="<<endl;
+// 	cout<<"Total price in Riel : "<<fixed<<setprecision(2)<<total<<" $"<<endl;
+//     cout<<"=================================================="<<endl;
+//     cout<<"=================================================="<<endl;
+// }
+
+// int main(){
+// 	system("cls");
+// 	do{
+// 		cout<<"\t\t\t Store Phone"<<endl;
+// 		cout<<"1.Create Phone "<<endl;
+// 		cout<<"2.Display Phone"<<endl;
+// 		cout<<"3.Payment in Riel"<<endl;
+// 		cout<<"4.Payment in Dollar"<<endl;
+// 		cout<<"0.Exit"<<endl;
+// 		cout<<"Enter your option : ";cin>>option;
+// 		switch(option){
+// 			case 0 :{
+// 				cout<<"================================================="<<endl;
+// 				cout<<"º\t\t\tThank you!"<<endl;
+// 				cout<<"================================================="<<endl;
+//                 break;
+// 			}
+// 			case 1 : {
+// 				// function create or input 
+// 				CreatePhone();
+
+// 				break;
+// 			}
+// 			case 2 : {
+// 				DisplayPhone();
+// 				break;
+// 			}
+// 			case 3 : {
+//                 PaymentRiel();
+//                 break;
+//             }
+// 			case 4 : {
+//                 PaymentDollar();
+//                 break;
+//             }
+// 			default : {
+//                 cout<<"Invalid option. Please try again."<<endl;
+//                 break;
+//             }
+// 		}	
+
+
+// 	}while(option != 0);
+	
+// }
+
+
+#include<iostream>
+using namespace std;
+int code[100],quantity[100],size;
+string name[100];
+float price[100];
+bool check;
+void CreateProductPhone(){
+	cout<<"\t\t===================[Create Stock]========================="<<endl;
+	cout<<"\t\tEnter size of phone to create : ";cin>>size;
+	for(int i=0;i<size;i++){
+		cout<<"\t\tEnter phone code : ";cin>>code[i];
+        cout<<"\t\tEnter phone name : ";cin>>name[i];
+        cout<<"\t\tEnter phone price : ";cin>>price[i];
+        cout<<"\t\tEnter phone quantity : ";cin>>quantity[i];
+	}
+	cout<<"\t\t==============[Stock created successfully]====================="<<endl;
 }
+
+void DisplayProductPhone(){
+	cout<<"\t\t===================[Display Stock]=========================="<<endl;
+    cout<<"\t\tPhone Code \tPhone Name \tPhone Price \tPhone Quantity \n";
+    for(int i=0;i<size;i++){
+        cout<<"\t\t"<<code[i]<<"\t\t"<<name[i]<<"\t\t"<<price[i]<<"\t\t"<<quantity[i]<<endl;
+    }
+    cout<<"\t\t====================End Display=========================="<<endl;
+}
+
+	void SearchProductPhone(){
+		int op;
+		again:
+		check = true;
+		cout<<"\t\t==================[Search Phone]================================"<<endl;
+		cout<<"\t\t1. Search by id.\n";
+		cout<<"\t\t2. Search by name.\n";
+		cout<<"\t\tEnter your option : ";cin>>op;
+		if(op==1){
+			int SearchId;
+			cout<<"\t\tEnter phone id to search : ";cin>>SearchId;
+			for(int i=0;i<size;i++){
+				if(code[i]==SearchId){
+					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\tPhone Code : "<<code[i]<<endl;
+					cout<<"\t\tPhone Name : "<<name[i]<<endl;
+					cout<<"\t\tPhone Price : "<<price[i]<<endl;
+					cout<<"\t\tPhone Quantity : "<<quantity[i]<<endl;
+					check = false;
+					cout<<"\t\t===================================================="<<endl;
+					break;
+				}
+			}
+			if(check){
+				cout<<"\t\tPhone not found."<<endl;
+			}
+		}else if(op == 2){
+			string SearchName;
+			cout<<"\t\tEnter phone name to search : ";cin>>SearchName;
+			for(int i=0;i<size;i++){
+				if(name[i]==SearchName){
+					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\tPhone Code : "<<code[i]<<endl;
+					cout<<"\t\tPhone Name : "<<name[i]<<endl;
+					cout<<"\t\tPhone Price : "<<price[i]<<endl;
+					cout<<"\t\tPhone Quantity : "<<quantity[i]<<endl;
+					check = false;
+					cout<<"\t\t===================================================="<<endl;
+					break;
+				}
+			}
+		}else{
+			cout<<"\t\tInvalid option. Please try again."<<endl;
+			goto again;
+		}
+		cout<<"\t\t====================End Search=========================="<<endl;
+		
+	}
+
 
 int main(){
 	system("cls");
+	int op;
 	do{
-		cout<<"\t\t\t Store Phone"<<endl;
-		cout<<"1.Create Phone "<<endl;
-		cout<<"2.Display Phone"<<endl;
-		cout<<"3.Payment in Riel"<<endl;
-		cout<<"4.Payment in Dollar"<<endl;
-		cout<<"0.Exit"<<endl;
-		cout<<"Enter your option : ";cin>>option;
-		switch(option){
-			case 0 :{
-				cout<<"================================================="<<endl;
-				cout<<"º\t\t\tThank you!"<<endl;
-				cout<<"================================================="<<endl;
+		cout<<"\t\t=====================[Menu]===================="<<endl;
+		cout<<"\t\t[ 1. Create a stock. "<<endl;
+		cout<<"\t\t[ 2. Display all stock."<<endl;
+		cout<<"\t\t[ 3. Search for phone."<<endl;
+		cout<<"\t\t[ 4. Delete a phone."<<endl;
+		cout<<"\t\t[ 5. Update the phone."<<endl;
+		cout<<"\t\t[ 6. Insert a new phone."<<endl;
+		cout<<"\t\t[ 7. Sort product."<<endl;
+		cout<<"\t\t[ 0. Exit"<<endl;
+		cout<<"\t\t============================================="<<endl;
+        cout<<"\t\tEnter your option : ";cin>>op;
+		switch(op){
+			case 0 : {
+				cout<<"\t\t====================Exit=========================="<<endl;
                 break;
 			}
-			case 1 : {
-				// function create or input 
-				CreatePhone();
-
+			case 1 :{
+				CreateProductPhone();
 				break;
 			}
 			case 2 : {
-				DisplayPhone();
-				break;
-			}
+                DisplayProductPhone();
+                break;
+            }
 			case 3 : {
-                PaymentRiel();
+                SearchProductPhone();
                 break;
             }
 			case 4 : {
-                PaymentDollar();
-                break;
-            }
-			default : {
-                cout<<"Invalid option. Please try again."<<endl;
-                break;
-            }
-		}	
+				break;
+			}
+		}
 
 
-	}while(option != 0);
-	
+	}while(op != 0);
+
+
+	return 0;
 }
+
+
+
+
+
+
