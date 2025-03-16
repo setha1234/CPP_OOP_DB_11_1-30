@@ -419,7 +419,8 @@ void CreateProductPhone(){
 	cout<<"\t\t===================[Create Stock]========================="<<endl;
 	cout<<"\t\tEnter size of phone to create : ";cin>>size;
 	for(int i=0;i<size;i++){
-		cout<<"\t\tEnter phone code : ";cin>>code[i];
+		
+		cout<<"\n\t\tEnter phone code : ";cin>>code[i];
         cout<<"\t\tEnter phone name : ";cin>>name[i];
         cout<<"\t\tEnter phone price : ";cin>>price[i];
         cout<<"\t\tEnter phone quantity : ";cin>>quantity[i];
@@ -485,6 +486,62 @@ void DisplayProductPhone(){
 		
 	}
 
+	void DeleteProductPhone(){
+		int deleteById;
+		check = true;
+		cout<<"\t\t=======================[Delete]======================="<<endl;\
+		cout<<"\t\tEnter id of phone to delete: ";cin>>deleteById;// 1
+		for (int i=0;i<size;i++){
+			if(deleteById==code[i]){
+				for(int j=0;j<size-1;j++){
+					code[j] = code[j+1];
+                    name[j] = name[j+1];
+                    price[j] = price[j+1];
+                    quantity[j] = quantity[j+1];
+					check = false;
+					break;
+				}
+				size--;
+			}
+			break;
+		}
+		if(check){
+			cout<<"\t\tPhone not found."<<endl;
+		}else{
+			cout<<"\t\tPhone deleted successfully."<<endl;
+		}
+		cout<<"\t\t====================End Delete=========================="<<endl;
+	}
+
+	void UpdateProductPhone(){
+		int update,newCode,newQuantity;
+		string NewName;
+		float newPrice;
+
+		check = true;
+		cout<<"\t\t=====================Update Product Phone============================\n";
+		cout<<"\t\t Enter id for update  :";cin>>update;
+		for(int i=0;i<size;i++){
+			if(update == code[i]){
+				cout<<"\t\t ID IS FOUND : ["<<code[i]<<"]\n";
+				cout<<"\t\tEnter new phone code : ";cin>>newCode;
+				cout<<"\t\tEnter new phone name : ";cin>>NewName;
+				cout<<"\t\tEnter new phone price : ";cin>>newPrice;
+				cout<<"\t\tEnter new phone quantity : ";cin>>newQuantity;
+				code[i] = newCode;
+				name[i] = NewName;
+				price[i] = newPrice;
+				quantity[i] = newQuantity;
+				check = false;
+				cout<<"\t\t====================Update Successful=========================="<<endl;
+                break;		
+			}
+		}
+		if(check){
+            cout<<"\t\tPhone not found."<<endl;
+        }
+        cout<<"\t\t====================End Update=========================="<<endl;
+	}
 
 int main(){
 	system("cls");
@@ -519,8 +576,13 @@ int main(){
                 break;
             }
 			case 4 : {
+				DeleteProductPhone();
 				break;
 			}
+			case 5 : {
+                UpdateProductPhone();
+                break;
+            }
 		}
 
 
