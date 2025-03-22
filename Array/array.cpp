@@ -416,7 +416,9 @@ string name[100];
 float price[100];
 bool check;
 void CreateProductPhone(){
-	cout<<"\t\t===================[Create Stock]========================="<<endl;
+	cout<<"\t\t==================================================\n";
+	cout<<"\t\t             Create Phone from Stock              \n";
+	cout<<"\t\t==================================================\n";
 	cout<<"\t\tEnter size of phone to create : ";cin>>size;
 	for(int i=0;i<size;i++){
 		
@@ -425,38 +427,43 @@ void CreateProductPhone(){
         cout<<"\t\tEnter phone price : ";cin>>price[i];
         cout<<"\t\tEnter phone quantity : ";cin>>quantity[i];
 	}
-	cout<<"\t\t==============[Stock created successfully]====================="<<endl;
+	cout<<"\t\t==================================================\n";
 }
 
 void DisplayProductPhone(){
-	cout<<"\t\t===================[Display Stock]=========================="<<endl;
-    cout<<"\t\tPhone Code \tPhone Name \tPhone Price \tPhone Quantity \n";
+	cout<<"\t\t==================================================\n";
+	cout<<"\t\t              Display All Phone                   \n";
+	cout<<"\t\t==================================================\n";
+    cout<<"\tPhone Code \tPhone Name \tPhone Price \tPhone Quantity \n";
     for(int i=0;i<size;i++){
-        cout<<"\t\t"<<code[i]<<"\t\t"<<name[i]<<"\t\t"<<price[i]<<"\t\t"<<quantity[i]<<endl;
+        cout<<"\t"<<code[i]<<"\t\t"<<name[i]<<"\t\t"<<price[i]<<"\t\t"<<quantity[i]<<endl;
     }
-    cout<<"\t\t====================End Display=========================="<<endl;
+    cout<<"\t\t==================================================\n";
 }
 
 	void SearchProductPhone(){
 		int op;
 		again:
 		check = true;
-		cout<<"\t\t==================[Search Phone]================================"<<endl;
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t              Search Phone from Stock             \n";
+		cout<<"\t\t==================================================\n";
 		cout<<"\t\t1. Search by id.\n";
 		cout<<"\t\t2. Search by name.\n";
 		cout<<"\t\tEnter your option : ";cin>>op;
 		if(op==1){
 			int SearchId;
+			cout<<"\t\t==================================================\n";
 			cout<<"\t\tEnter phone id to search : ";cin>>SearchId;
 			for(int i=0;i<size;i++){
 				if(code[i]==SearchId){
-					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\t==================================================\n";
 					cout<<"\t\tPhone Code : "<<code[i]<<endl;
 					cout<<"\t\tPhone Name : "<<name[i]<<endl;
 					cout<<"\t\tPhone Price : "<<price[i]<<endl;
 					cout<<"\t\tPhone Quantity : "<<quantity[i]<<endl;
 					check = false;
-					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\t==================================================\n";
 					break;
 				}
 			}
@@ -465,16 +472,17 @@ void DisplayProductPhone(){
 			}
 		}else if(op == 2){
 			string SearchName;
+			cout<<"\t\t==================================================\n";
 			cout<<"\t\tEnter phone name to search : ";cin>>SearchName;
 			for(int i=0;i<size;i++){
 				if(name[i]==SearchName){
-					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\t==================================================\n";
 					cout<<"\t\tPhone Code : "<<code[i]<<endl;
 					cout<<"\t\tPhone Name : "<<name[i]<<endl;
 					cout<<"\t\tPhone Price : "<<price[i]<<endl;
 					cout<<"\t\tPhone Quantity : "<<quantity[i]<<endl;
 					check = false;
-					cout<<"\t\t===================================================="<<endl;
+					cout<<"\t\t==================================================\n";
 					break;
 				}
 			}
@@ -482,18 +490,20 @@ void DisplayProductPhone(){
 			cout<<"\t\tInvalid option. Please try again."<<endl;
 			goto again;
 		}
-		cout<<"\t\t====================End Search=========================="<<endl;
+		cout<<"\t\t==================================================\n";
 		
 	}
 
 	void DeleteProductPhone(){
 		int deleteById;
 		check = true;
-		cout<<"\t\t=======================[Delete]======================="<<endl;\
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t                 Delete Phone                     \n";
+		cout<<"\t\t==================================================\n";
 		cout<<"\t\tEnter id of phone to delete: ";cin>>deleteById;// 1
 		for (int i=0;i<size;i++){
 			if(deleteById==code[i]){
-				for(int j=0;j<size-1;j++){
+				for(int j=i;j<size-1;j++){
 					code[j] = code[j+1];
                     name[j] = name[j+1];
                     price[j] = price[j+1];
@@ -510,7 +520,7 @@ void DisplayProductPhone(){
 		}else{
 			cout<<"\t\tPhone deleted successfully."<<endl;
 		}
-		cout<<"\t\t====================End Delete=========================="<<endl;
+		cout<<"\t\t==================================================\n";
 	}
 
 	void UpdateProductPhone(){
@@ -519,7 +529,9 @@ void DisplayProductPhone(){
 		float newPrice;
 
 		check = true;
-		cout<<"\t\t=====================Update Product Phone============================\n";
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t               Update Product Phone               \n";	
+		cout<<"\t\t==================================================\n";
 		cout<<"\t\t Enter id for update  :";cin>>update;
 		for(int i=0;i<size;i++){
 			if(update == code[i]){
@@ -533,34 +545,116 @@ void DisplayProductPhone(){
 				price[i] = newPrice;
 				quantity[i] = newQuantity;
 				check = false;
-				cout<<"\t\t====================Update Successful=========================="<<endl;
+				cout<<"\t\t==================================================\n";
+				cout<<"\t\t                Update Complate                   \n";
+				cout<<"\t\t==================================================\n";
                 break;		
 			}
 		}
 		if(check){
             cout<<"\t\tPhone not found."<<endl;
         }
-        cout<<"\t\t====================End Update=========================="<<endl;
+        cout<<"\t\t==================================================\n";
+        
 	}
+	
+	
+	void AddProductPhone(){
+		// example : 10-5 ; size 10 + 5 new size	
+		int new_size;
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t              Add Phone to Stock                  \n";
+		cout<<"\t\t==================================================\n";
+		cout<<"Add New Phone to Stock : ";cin>>new_size;
+		// loop for input variable and value
+		for (int i=size;i<size+new_size;i++){
+			cout<<"\t\t==================================================\n";
+			cout<<"\n\t\tEnter phone code : ";cin>>code[i];
+        	cout<<"\t\tEnter phone name : ";cin>>name[i];
+        	cout<<"\t\tEnter phone price : ";cin>>price[i];
+        	cout<<"\t\tEnter phone quantity : ";cin>>quantity[i];	
+		} // size 10 // Start 10  // 10+5 = 15
+		size+=new_size;// Add size
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t                 Add Complate                     \n";
+		cout<<"\t\t==================================================\n";
+		
+	}
+	
+	void SortPhone(){
+		int op;
+		check = false;
+		do{
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t                  Sort Phone                      \n";
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t                  Sort By ID                      "<<endl;
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t[ 1. Sort { 1-100 }."<<endl;
+			cout<<"\t\t[ 2. Sort { 100-1 }."<<endl;
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t                 Sort By Name                     "<<endl;
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t[ 3. Sort {A-Z}."<<endl;
+			cout<<"\t\t[ 4. Sort {Z-A}."<<endl;
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t               Sort By Price                      "<<endl;
+			cout<<"\t\t==================================================\n";
+			cout<<"\t\t[ 5. Sort Lower price to Expensive price."<<endl;
+			cout<<"\t\t[ 6. Sort Expensive price to Lower price."<<endl;
+			cout<<"\t\t[ 0. Go Back to Menu.\n"<<endl;
+			cout<<"\t\t = > Please choose an option : ";cin>>op;
+			
+			switch(op){
+				case 1 :{			
+					for (int i=0;i<size;i++){
+						for(int j=i+1;j<size;j++){
+							if(code[i]>code[j]){
+								swap(code[i],code[j]);
+								swap(name[i],name[j]);
+								swap(price[i],price[j]);
+								swap(quantity[i],quantity[j]);
+								check = true;
+							}
+						}
+						
+					}	
+					if(!check){
+						cout<<"\t\t sort not complate!"<<endl;
+					}else{
+						cout<<"\t\t Sort is success"<<endl;
+					}		
+					break;
+				}
+				
+			}
+			
+		}while(op!=0);
+	}
+	
 
 int main(){
 	system("cls");
 	int op;
 	do{
-		cout<<"\t\t=====================[Menu]===================="<<endl;
+		cout<<"\t\t==================================================\n";
+		cout<<"\t\t                    Menu Phone                    \n";
+		cout<<"\t\t==================================================\n";
 		cout<<"\t\t[ 1. Create a stock. "<<endl;
 		cout<<"\t\t[ 2. Display all stock."<<endl;
 		cout<<"\t\t[ 3. Search for phone."<<endl;
 		cout<<"\t\t[ 4. Delete a phone."<<endl;
 		cout<<"\t\t[ 5. Update the phone."<<endl;
 		cout<<"\t\t[ 6. Insert a new phone."<<endl;
-		cout<<"\t\t[ 7. Sort product."<<endl;
+		cout<<"\t\t[ 7. Sort product."<<endl; // Sort by name[ A-Z ] / [ Z-A ] / Sort by Id [ 1- 100 ] / [ 100-1 ]
 		cout<<"\t\t[ 0. Exit"<<endl;
-		cout<<"\t\t============================================="<<endl;
+		cout<<"\t\t==================================================\n";
         cout<<"\t\tEnter your option : ";cin>>op;
 		switch(op){
 			case 0 : {
-				cout<<"\t\t====================Exit=========================="<<endl;
+				cout<<"\t\t==================================================\n";
+				cout<<"\t\t        Thank You For Using Our Program           \n";
+				cout<<"\t\t==================================================\n";
                 break;
 			}
 			case 1 :{
@@ -583,6 +677,15 @@ int main(){
                 UpdateProductPhone();
                 break;
             }
+            case 6  :{
+            	AddProductPhone();
+				break;
+			}
+			case 7 :{
+				SortPhone();
+				break;
+			}
+            
 		}
 
 
