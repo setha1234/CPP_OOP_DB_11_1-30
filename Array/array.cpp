@@ -627,10 +627,42 @@ void DisplayProductPhone(){
 					break;
 				}
 				case 2 : {
-					
+					for (int i=0;i<size;i++){ // loop i index 0 -> size = [1] 6
+						for(int j=i+1;j<size;j++){// loop j index 1 -> size; [1] = 9
+							if(code[i]<code[j]){
+								swap(code[i],code[j]);
+								swap(name[i],name[j]);
+								swap(price[i],price[j]);
+								swap(quantity[i],quantity[j]);
+								check = true;
+							}
+						}			
+					}	
+					if(!check){
+						cout<<"\t\t sort not complate!"<<endl;
+					}else{
+						cout<<"\t\t Sort is success"<<endl;
+					}		
+					break;
 					break;
 				}
 				case 3 :{
+					for (int i=0;i<size;i++){
+						for(int j=i+1;j<size;j++){
+							if(name[i]>name[j]){
+								swap(code[i],code[j]);
+								swap(name[i],name[j]);
+								swap(price[i],price[j]);
+								swap(quantity[i],quantity[j]);
+								check = true;
+							}
+						}
+					}
+					if(!check){
+						cout<<"\t\t sort not complate!"<<endl;
+					}else{
+						cout<<"\t\t Sort is success"<<endl;
+					}	
 					
 					break;
 				}
@@ -674,6 +706,25 @@ void DisplayProductPhone(){
 					break;
 				}
 				case 6 :{
+					for(int i=0;i<size;i++){
+						for(int j=i+1;j<size;j++){
+							if(price[i]<price[j]){
+								swap(code[i],code[j]);
+								swap(name[i],name[j]);
+								swap(price[i],price[j]);
+								swap(quantity[i],quantity[j]);
+								check = true;
+							}
+						}
+					}
+					if(!check){
+						cout<<"\t\t sort not complate!"<<endl;
+					}else{
+						cout<<"\t\t Sort is success"<<endl;
+					}
+					break;
+				}
+				case 0 :{
 					
 					break;
 				}
