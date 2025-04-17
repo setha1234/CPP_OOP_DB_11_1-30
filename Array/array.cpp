@@ -1,4 +1,4 @@
-/*
+	/*
     Array is like a variable but array can store multiple values in memory
 
     Syntax: datatype variable_name[size];
@@ -415,6 +415,22 @@ int code[100],quantity[100],size;
 string name[100];
 float price[100];
 bool check;
+
+void Loading() {
+    cout << "\n\n\t\tLoading";
+    char a ='.';  
+
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 100000000; ++j);  
+        cout << a;
+    }
+
+    cout << "\nDone!" << endl;
+}
+
+
+	
+
 void CreateProductPhone(){
 	cout<<"\t\t==================================================\n";
 	cout<<"\t\t             Create Phone from Stock              \n";
@@ -434,9 +450,9 @@ void DisplayProductPhone(){
 	cout<<"\t\t==================================================\n";
 	cout<<"\t\t              Display All Phone                   \n";
 	cout<<"\t\t==================================================\n";
-    cout<<"\tPhone Code \tPhone Name \tPhone Price \tPhone Quantity \n";
+    cout<<"\t\tCode Phone\tModel Phone \tPrice \tQuantity \n";
     for(int i=0;i<size;i++){
-        cout<<"\t"<<code[i]<<"\t\t"<<name[i]<<"\t\t"<<price[i]<<"\t\t"<<quantity[i]<<endl;
+        cout<<"\t\t"<<code[i]<<"\t\t"<<name[i]<<"\t\t"<<price[i]<<"\t\t"<<quantity[i]<<endl;
     }
     cout<<"\t\t==================================================\n";
 }
@@ -584,7 +600,9 @@ void DisplayProductPhone(){
 	void SortPhone(){
 		int op;
 		check = false;
+		
 		do{
+			system("pause");
 			cout<<"\t\t==================================================\n";
 			cout<<"\t\t                  Sort Phone                      \n";
 			cout<<"\t\t==================================================\n";
@@ -741,9 +759,11 @@ void DisplayProductPhone(){
 	
 
 int main(){
-	system("cls");
+	Loading();
 	int op;
 	do{
+	
+		system("cls");
 		cout<<"\t\t==================================================\n";
 		cout<<"\t\t                    Menu Phone                    \n";
 		cout<<"\t\t==================================================\n";
@@ -766,30 +786,37 @@ int main(){
 			}
 			case 1 :{
 				CreateProductPhone();
+				system("pause");
 				break;
 			}
 			case 2 : {
                 DisplayProductPhone();
+                system("pause");
                 break;
             }
 			case 3 : {
                 SearchProductPhone();
+                system("pause");
                 break;
             }
 			case 4 : {
 				DeleteProductPhone();
+				system("pause");
 				break;
 			}
 			case 5 : {
                 UpdateProductPhone();
+                system("pause");
                 break;
             }
             case 6  :{
             	AddProductPhone();
+            	system("pause");
 				break;
 			}
 			case 7 :{
 				SortPhone();
+				system("pause");
 				break;
 			}
             
